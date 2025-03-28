@@ -1,0 +1,21 @@
+<INPUT SW[3:0]>
+
+STOPWATCH 모드> 시간  0001  분 0000
+watch모드  > 시간 0011 분 0010
+울트라소닉 > 0100
+온습도센서 > TEMP 1000 HUMI 1001
+DEFAULT: 0000
+
+
+< STOPWATCH, WATCH SYSTEM>
+SW[0]  - 시,분 - 1'b1 / 초,Msec 구분 -1'b0
+SW[1] -  WATCH -1'b1 / STOPWATCH-1'b0 
+
+<Ultra Sonic>
+
+SW[2] - ON - US(0.1초마다 자동작동, FND distance 값이 보이게 ) / OFF - US 
+
+<온습도계>
+
+SW[3] - ON - US(10초마다 자동작동) / OFF - US 
+SW[0] - ON - FND 습도값이 보이게 / OFF - FND 온도값이 보이게
