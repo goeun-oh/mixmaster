@@ -11,7 +11,7 @@ module UART_FIFO #(
     input sel,
     input tick_100hz,
     input tick_1s,
-    input [7:0] i_watch,
+    input [7:0] i_data,
     output tx,
     output [DATA_WIDTH-1:0] o_data,
     output re_rx
@@ -26,7 +26,7 @@ wire RX_RE, TX_WE, TX_START;
 reg tick_reg, tick_next;
 
 assign TX_START = sel? (!TX_done &!TX_empty)&tick_reg:!TX_empty;
-assign TX_wdata=sel?i_watch:RX_out;
+assign TX_wdata=sel?i_data:RX_out;
 assign TX_WE=sel?(!TX_full & tick_100hz):!RX_empty;
 assign RX_RE=sel?!RX_empty:!TX_full;
 

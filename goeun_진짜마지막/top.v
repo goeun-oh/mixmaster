@@ -150,7 +150,7 @@ module top #(
         .o_data(w_cmd),
         .re_rx(valid),
         .sel(sel),
-        .i_watch(w_data_to_pc),
+        .i_data(w_data_to_pc),
         .tick_100hz(tick_100hz),
         .tick_1s(tick_1s)
     );
